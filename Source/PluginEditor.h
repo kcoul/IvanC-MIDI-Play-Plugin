@@ -1,13 +1,3 @@
-/*
-  ==============================================================================
-
-    This file was auto-generated!
-
-    It contains the basic framework code for a JUCE plugin editor.
-
-  ==============================================================================
-*/
-
 #pragma once
 
 #include <JuceHeader.h>
@@ -34,50 +24,32 @@ public:
 
     //==============================================================================
     void buttonClicked(juce:: Button* button) override;
-    //void checkBoxChanged(juce::ToggleButton* checkBox) override;
     void comboBoxChanged(juce::ComboBox* combo) override;
 
     void setInfoLabelText(juce::String daNewText);
     juce::String getInfoLabelText();
 
-    //static SimpleMidiplayerAudioProcessorEditor getInstance();
-
 private:
     //==============================================================================
     void updateTrackComboBox();
 
-    //JOELwindows7: here define play / pause & stop button press callbacks. what if
-    //we just hack the AudioPlayHead, yeah that host's play head!
-    /*void pressPlayPauseButton();
-    void pressStopButton();*/
-
-    //=============================================================================
-    //JOELwindows7: handovered component you must paste here in your face
-
-    //TODO: juce::Component &myMaskOn; //Or maybe2, try hacker class instead (empty bridge). nvm, not working this way I suppose.
-    
-    //==============================================================================
-    //juce::OwnedArray<juce::TextButton> buttonsOfStuffs; //JOELwindows7: holding buttons
-
     juce::ScopedPointer<juce::TextButton> buttonLoadMIDIFile;
     juce::ScopedPointer<juce::ComboBox> comboTrack;
-
-    //JOELwindows7: okay, WHY THERE IS NO PLAY BUTTON??! WHY I HAVE TO RELY ON HOST'S PLAY BUTTON??!?
-    juce::ScopedPointer<juce::TextButton>   buttonPlayNow, // Play / Pause
-                                            buttonStopNow, // Stop
-                                            buttonPanicNow, // Panic PANIK!!!
-                                            buttonClearLogNow // Clear textbox and all logs
+    juce::ScopedPointer<juce::TextButton>   buttonPlayNow,
+                                            buttonStopNow,
+                                            buttonPanicNow,
+                                            buttonClearLogNow
                                             ;
-    juce::ScopedPointer<juce::ToggleButton> checkBoxAllTracks, // ON / OFF play all tracks at once
-                                            checkBoxOwnTransport, // ON / OFF use own transport
-                                            checkBoxLoop, // ON / OFF use loop
-                                            checkBoxSpacer // ON / OFF space 3 second after the end.
+    juce::ScopedPointer<juce::ToggleButton> checkBoxAllTracks,
+                                            checkBoxOwnTransport,
+                                            checkBoxLoop,
+                                            checkBoxSpacer
                                             ;
-    juce::TextEditor&                       infoLabel // Comprehensive infolabels
+    juce::TextEditor&                       infoLabel
                                             ;
-    juce::Label&                            timerLabel // Comprehensive timer label
+    juce::Label&                            timerLabel
                                             ;
-    juce::OwnedArray<juce::TextButton>&     radioButtonsPls // Comprehensive radio button to change which info the text editor box to show.
+    juce::OwnedArray<juce::TextButton>&     radioButtonsPls
                                             ;
     
     //==============================================================================
